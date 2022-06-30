@@ -33,12 +33,23 @@ public class StudentServiceImpl implements StudentService {
         student.setAge(dto.getAge());
         student.setGender(dto.getGender());
         student.setName(dto.getName());
-        Student saved = studentRepository.save(student);
-        return saved;
+        return studentRepository.save(student);
     }
 
     @Override
-    public Student deleteStudent(UUID id) {
-        return null;
+    public Student updateStudent(UUID id, StudentDto dto) throws Exception {
+        Student existingStudent = this.getOne(id);
+        existingStudent.setName(dto.getName());
+        existingStudent.setAge(dto.getAge());
+        existingStudent.setGender(dto.getGender());
+        return studentRepository.save(existingStudent);
+    }
+
+
+    @Override
+    public Student deleteStudent(UUID id) throws Exception {
+        Student existingStudent = this.getOne(id);
+        studentRepository.deleteById(id);
+        return existingStudent;
     }
 }

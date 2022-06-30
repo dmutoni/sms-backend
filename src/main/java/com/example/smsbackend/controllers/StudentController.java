@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
+@RestController()
 @RequestMapping("/api/students")
 public class StudentController {
     public final StudentServiceImpl studentService;
@@ -28,5 +28,13 @@ public class StudentController {
     @GetMapping("/:id")
     public Student getStudentById(@RequestParam UUID id) throws Exception {
         return studentService.getOne(id);
+    }
+    @PutMapping("/:id")
+    public Student updateStudent(@RequestParam UUID id, @RequestBody StudentDto dto) throws Exception {
+        return studentService.updateStudent(id, dto);
+    }
+    @DeleteMapping("/:id")
+    public Student deleteStudent(@RequestParam UUID id) throws Exception {
+        return studentService.deleteStudent(id);
     }
 }

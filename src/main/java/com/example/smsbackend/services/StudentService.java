@@ -13,5 +13,6 @@ public interface StudentService {
     List<Student> getAllStudents();
     Student getOne(UUID id) throws Exception;
     Student createStudent(StudentDto dto);
-    Student deleteStudent(UUID id);
+    Student updateStudent(UUID id, StudentDto dto) throws Exception;
+    Student deleteStudent(UUID id) throws Exception;
 }
