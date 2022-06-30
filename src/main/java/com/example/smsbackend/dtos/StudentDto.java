@@ -7,6 +7,8 @@ public class StudentDto {
 
     private String gender;
 
+    private String profile;
+
     public StudentDto() {
     }
 
@@ -32,5 +34,13 @@ public class StudentDto {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 }

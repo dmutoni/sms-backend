@@ -33,6 +33,7 @@ public class StudentServiceImpl implements StudentService {
         student.setAge(dto.getAge());
         student.setGender(dto.getGender());
         student.setName(dto.getName());
+        student.setPicture(dto.getProfile());
         return studentRepository.save(student);
     }
 
@@ -42,6 +43,7 @@ public class StudentServiceImpl implements StudentService {
         existingStudent.setName(dto.getName());
         existingStudent.setAge(dto.getAge());
         existingStudent.setGender(dto.getGender());
+        existingStudent.setPicture(dto.getProfile());
         return studentRepository.save(existingStudent);
     }
 

@@ -21,6 +21,9 @@ public class Student {
 
     private String gender;
 
+    @Column(nullable = true, length = 64)
+    private String picture;
+
     public Student() {
 
     }
@@ -55,5 +58,13 @@ public class Student {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
